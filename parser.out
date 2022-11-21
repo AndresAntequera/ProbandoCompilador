@@ -1,0 +1,110 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    BREAK
+    CONTINUE
+    DEF
+    DOBPUNTO
+    ELIF
+    ELSE
+    FOR
+    IF
+    IN
+    RANGE
+    RETURN
+
+Grammar
+
+Rule 0     S' -> init
+Rule 1     init -> instrucciones
+Rule 2     instrucciones -> instrucciones instruccion
+Rule 3     instrucciones -> instruccion
+Rule 4     instruccion -> imprimir_instr
+Rule 5     instruccion -> asignacion_instr
+Rule 6     instruccion -> if_instr
+Rule 7     instruccion -> while_instr
+Rule 8     statement -> imprimir_instr
+Rule 9     statement -> if_instr
+Rule 10    statement -> expresion
+Rule 11    statement -> while_instr
+Rule 12    while_instr -> WHILE PARIZQ expresion_logica PARDER LLAVIZQ statement LLAVDER
+Rule 13    asignacion_instr -> ID IGUAL expresion PTCOMA
+Rule 14    expresion -> ENTERO
+Rule 15    expresion -> DECIMAL
+Rule 16    expresion -> STRING
+Rule 17    expresion -> ID
+Rule 18    imprimir_instr -> PRINT PARIZQ expresion PARDER PTCOMA
+Rule 19    expresion_logica -> expresion MENQUE expresion
+Rule 20    expresion_logica -> expresion MAYQUE expresion
+Rule 21    expresion_logica -> expresion IGUALQUE expresion
+Rule 22    expresion_logica -> expresion NIGUALQUE expresion
+Rule 23    expresion_logica -> expresion MENIGUAL expresion
+Rule 24    expresion_logica -> expresion MAYIGUAL expresion
+Rule 25    expresion_logica -> PARIZQ expresion_logica PARDER MENQUE PARIZQ expresion_logica PARDER
+Rule 26    expresion_logica -> PARIZQ expresion_logica PARDER MAYQUE PARIZQ expresion_logica PARDER
+Rule 27    expresion_logica -> PARIZQ expresion_logica PARDER IGUALQUE PARIZQ expresion_logica PARDER
+Rule 28    expresion_logica -> PARIZQ expresion_logica PARDER NIGUALQUE PARIZQ expresion_logica PARDER
+Rule 29    expresion_logica -> PARIZQ expresion_logica PARDER MAYIGUAL PARIZQ expresion_logica PARDER
+Rule 30    expresion_logica -> PARIZQ expresion_logica PARDER MENIGUAL PARIZQ expresion_logica PARDER
+Rule 31    expresion_logica -> PARIZQ expresion_logica PARDER AND PARIZQ expresion_logica PARDER
+Rule 32    expresion_logica -> PARIZQ expresion_logica PARDER OR PARIZQ expresion_logica PARDER
+Rule 33    expresion_logica -> expresion_logica AND expresion_logica
+Rule 34    expresion_logica -> expresion_logica OR expresion_logica
+Rule 35    expresion -> expresion MAS expresion
+Rule 36    expresion -> expresion MENOS expresion
+Rule 37    expresion -> expresion POR expresion
+Rule 38    expresion -> expresion DIVIDIDO expresion
+
+Terminals, with rules where they appear
+
+AND                  : 31 33
+BREAK                : 
+CONTINUE             : 
+DECIMAL              : 15
+DEF                  : 
+DIVIDIDO             : 38
+DOBPUNTO             : 
+ELIF                 : 
+ELSE                 : 
+ENTERO               : 14
+FOR                  : 
+ID                   : 13 17
+IF                   : 
+IGUAL                : 13
+IGUALQUE             : 21 27
+IN                   : 
+LLAVDER              : 12
+LLAVIZQ              : 12
+MAS                  : 35
+MAYIGUAL             : 24 29
+MAYQUE               : 20 26
+MENIGUAL             : 23 30
+MENOS                : 36
+MENQUE               : 19 25
+NIGUALQUE            : 22 28
+OR                   : 32 34
+PARDER               : 12 18 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32
+PARIZQ               : 12 18 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32
+POR                  : 37
+PRINT                : 18
+PTCOMA               : 13 18
+RANGE                : 
+RETURN               : 
+STRING               : 16
+WHILE                : 12
+error                : 
+
+Nonterminals, with rules where they appear
+
+asignacion_instr     : 5
+expresion            : 10 13 18 19 19 20 20 21 21 22 22 23 23 24 24 35 35 36 36 37 37 38 38
+expresion_logica     : 12 25 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34
+if_instr             : 6 9
+imprimir_instr       : 4 8
+init                 : 0
+instruccion          : 2 3
+instrucciones        : 1 2
+statement            : 12
+while_instr          : 7 11
+
